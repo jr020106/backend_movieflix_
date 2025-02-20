@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MovieFlix - Upcoming Movies</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <style>
         * {
             margin: 0;
@@ -68,39 +69,39 @@
 
     <div class="movie-container">
         <div class="movie-card">
-            <img src="Avatar-fire and ash.jpg" alt="Avatar-fire and ash">
+            <img src="{{ url_for('static', filename='images/Avatar-fire and ash.jpg') }}" alt="Avatar-fire and ash">
             <p class="movie-title">Avatar: Fire and Ash</p>
         </div>
         <div class="movie-card">
-            <img src="Thuglife.jpg" alt="Thuglife">
+            <img src="{{ url_for('static', filename='images/Thuglife.jpg') }}" alt="Thuglife">
             <p class="movie-title">Thuglife</p>
         </div>
         <div class="movie-card">
-            <img src="F1.jpeg" alt="F1">
+            <img src="{{ url_for('static', filename='images/F1.jpeg') }}" alt="F1">
             <p class="movie-title">F1</p>
         </div>
         <div class="movie-card">
-            <img src="Jurassic_World_Rebirth.jpg" alt="Jurassic World Rebirth">
+            <img src="{{ url_for('static', filename='images/Jurassic_World_Rebirth.jpg') }}" alt="Jurassic World Rebirth">
             <p class="movie-title">Jurassic World Rebirth</p>
         </div>
         <div class="movie-card">
-            <img src="Baaghi4.jpg" alt="Baaghi 4">
+            <img src="{{ url_for('static', filename='images/Baaghi4.jpg') }}" alt="Baaghi 4">
             <p class="movie-title">Baaghi 4</p>
         </div>
         <div class="movie-card">
-            <img src="Snowwhite.jpg" alt="Snow White">
+            <img src="{{ url_for('static', filename='images/Snowwhite.jpg') }}" alt="Snow White">
             <p class="movie-title">Snow White</p>
         </div>
         <div class="movie-card">
-            <img src="Housefull5.jpg" alt="Housefull 5">
+            <img src="{{ url_for('static', filename='images/Housefull5.jpg') }}" alt="Housefull 5">
             <p class="movie-title">Housefull 5</p>
         </div>
         <div class="movie-card">
-            <img src="Jaat.jpg" alt="Jaat">
+            <img src="{{ url_for('static', filename='images/Jaat.jpg') }}" alt="Jaat">
             <p class="movie-title">Jaat</p>
         </div>
         <div class="movie-card">
-            <img src="Raid2.jpg" alt="Raid 2">
+            <img src="{{ url_for('static', filename='images/Raid2.jpg') }}" alt="Raid 2">
             <p class="movie-title">Raid 2</p>
         </div>
     </div>

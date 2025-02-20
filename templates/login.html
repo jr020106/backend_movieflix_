@@ -222,9 +222,10 @@
 
 <body>
     <div class="container" id="container">
+        {% if not current_user.is_authenticated %}
         <div class="form-container sign-up">
-            <form action="/signup" method="POST">
-                {{form.hidden_tag()}}
+            <form action="{{ url_for('signup') }}" method="POST">
+                {{ form.hidden_tag() }}
                 <h1>Create Account</h1>
                 <div class="social-icons">
                     <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
@@ -233,14 +234,16 @@
                     <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
                 <span>or use your email for registration</span>
-                <input type="text" id="username" name="username" required>
-                <input type="email" id="email" name="email" required>
-                <input type="password" id="password" name="password" required>
-                <button>Sign Up</button>
+                <input type="text" id="username" name="username" placeholder="Username" required>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
+                <button type="submit">Sign Up</button>
             </form>
         </div>
         <div class="form-container sign-in">
-            <form>
+            <form action="{{ url_for('login') }}" method="POST">
+                {{ form.hidden_tag() }}
                 <h1>Sign In</h1>
                 <div class="social-icons">
                     <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
@@ -249,12 +252,15 @@
                     <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
                 <span>or use your email and password</span>
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
-                <a href="#">Forget Your Password?</a>
-                <button><a href="{{ url_for('main_routes.base') }}">Sign In</a></button>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Sign In</button>
             </form>
         </div>
+        {% else %}
+        <p>Welcome, {{ current_user.username }}!</p>
+        <a href="{{ url_for('logout') }}">Logout</a>
+        {% endif %}
         <div class="toggle-container">
             <div class="toggle">
                 <div class="toggle-panel toggle-left">
@@ -270,6 +276,17 @@
             </div>
         </div>
     </div>
+
+    <!-- Display validation errors -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul class="flashes">
+          {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
 
     <script>
         const container = document.getElementById('container');
