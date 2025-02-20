@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMDb Clone</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/MovieFlix.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">MovieFlix </div>
+        <div class="search-box">
+            <input type="text" placeholder="Search">
+            <button>🔎︎</button>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#101">Home</a></li>
+            <li><a href="#102">Genres</a></li>
+            <li><a href="ComingSoon.html">Coming Soon</a></li>
+            <li><a href="#103">About Us</a></li>
+        </ul>
+        <a href="{{ url_for('login') }}"><button class="sign-in">Sign In</button></a>
+          
+    </nav>
+
+    <header class="hero" id="101">
+        <div class="hero-text">
+            <h2>YOUR GUIDE TO THE REEL WORLD!!</h2>
+            <p>Welcome to MovieFlix, where cinema meets critique. We don't just rate movies-we dive into their stories, performances, and impact. Whether you're a casual viewer or a film fanatic, we've got the reviews you can trust.</p>
+            <a href="login.html"><button class="sign-up">Sign Up</button></a>
+              
+        </div>
+    </header>
+
+    <br id=102>
+
+    <br>
+
+    <br>
+
+    <br>
+    
+    <main>
+        <h1>Action & Thriller</h1>
+        <div class="gallery-container">
+            <button class="scroll-btn scroll-left" onclick="scrollGallery('action-thriller', -300)">&#10094;</button>
+            <div class="image-gallery" id="action-thriller">
+                <img src="{{ url_for('static', filename='images/maverick.jpg') }}" alt="Maverick">
+                <img src="{{ url_for('static', filename='images/john wick.jpg') }}" alt="John Wick">
+                <img src="{{ url_for('static', filename='images/mad max.jpg') }}" alt="Mad Max">
+                <img src="{{ url_for('static', filename='images/war.jpg') }}" alt="War">
+                <img src="{{ url_for('static', filename='images/jurassic park.jpg') }}" alt="Jurassic Park">
+                <img src="{{ url_for('static', filename='images/yodha.jpg') }}" alt="Yodha">
+                <img src="{{ url_for('static', filename='images/kalki.jpg') }}" alt="Kalki">
+            </div>
+            <button class="scroll-btn scroll-right" onclick="scrollGallery('action-thriller', 300)">&#10095;</button>
+        </div>
+    
+        <h1>SCI-FI</h1>
+        <div class="gallery-container">
+            <button class="scroll-btn scroll-left" onclick="scrollGallery('SCI-FI', -300)">&#10094;</button>
+            <div class="image-gallery" id="SCI-FI">
+                <img src="{{ url_for('static', filename='images/The_Matrix_Resurrections.jpg') }}" alt="The Matrix Resurrections">
+                <img src="{{ url_for('static', filename='images/Mission_Mangal.jpg') }}" alt="Mission Mangal">
+                <img src="{{ url_for('static', filename='images/arrival.jpg') }}" alt="Arrival">
+                <img src="{{ url_for('static', filename='images/Interstellar.jpg') }}" alt="Interstellar">
+                <img src="{{ url_for('static', filename='images/Martian.jpg') }}" alt="The Martian">
+                <img src="{{ url_for('static', filename='images/spaceman.jpg') }}" alt="Spaceman">
+                <img src="{{ url_for('static', filename='images/dune.jpg') }}" alt="Dune">
+            </div>
+            <button class="scroll-btn scroll-right" onclick="scrollGallery('SCI-FI', 300)">&#10095;</button>
+        </div>
+    
+        <h1>Comedy</h1>
+        <div class="gallery-container">
+            <button class="scroll-btn scroll-left" onclick="scrollGallery('COMEDY', -300)">&#10094;</button>
+            <div class="image-gallery" id="COMEDY">
+                <img src="{{ url_for('static', filename='images/Dhamaal.jpg') }}" alt="Dhamaal">
+                <img src="{{ url_for('static', filename='images/Hera_Pheri.jpg') }}" alt="Hera Pheri">
+                <img src="{{ url_for('static', filename='images/3_idiots.jpg') }}" alt="3 Idiots">
+                <img src="{{ url_for('static', filename='images/Spy.jpg') }}" alt="Spy">
+                <img src="{{ url_for('static', filename='images/Incoming.jpg') }}" alt="Incoming">
+                <img src="{{ url_for('static', filename='images/Confessions of a Shopaholic.jpg') }}" alt="Confessions of a Shopaholic">
+                <img src="{{ url_for('static', filename='images/PK.jpg') }}" alt="PK">
+            </div>
+            <button class="scroll-btn scroll-right" onclick="scrollGallery('COMEDY', 300)">&#10095;</button>
+        </div>
+    
+        <h1>Horror</h1>
+        <div class="gallery-container">
+            <button class="scroll-btn scroll-left" onclick="scrollGallery('HORROR', -300)">&#10094;</button>
+            <div class="image-gallery" id="HORROR">
+                <img src="{{ url_for('static', filename='images/pari.jpg') }}" alt="Pari">
+                <img src="{{ url_for('static', filename='images/munjya.jpg') }}" alt="Munjya">
+                <img src="{{ url_for('static', filename='images/Bulbbul.jpg') }}" alt="Bulbbul">
+                <img src="{{ url_for('static', filename='images/crow.jpg') }}" alt="Crow">
+                <img src="{{ url_for('static', filename='images/Conjuring.jpg') }}" alt="Conjuring">
+                <img src="{{ url_for('static', filename='images/Insidious.jpg') }}" alt="Insidious">
+                <img src="{{ url_for('static', filename='images/Annabelle.jpg') }}" alt="Annabelle">
+            </div>
+            <button class="scroll-btn scroll-right" onclick="scrollGallery('HORROR', 300)">&#10095;</button>
+        </div>
+    
+        <h1>Drama</h1>
+        <div class="gallery-container">
+            <button class="scroll-btn scroll-left" onclick="scrollGallery('DRAMA', -300)">&#10094;</button>
+            <div class="image-gallery" id="DRAMA">
+                <img src="{{ url_for('static', filename='images/Challengers.jpg') }}" alt="Challengers">
+                <img src="{{ url_for('static', filename='images/Joker.jpg') }}" alt="Joker">
+                <img src="{{ url_for('static', filename='images/The_Wolf_of_Wall_Street.jpg') }}" alt="The Wolf of Wall Street">
+                <img src="{{ url_for('static', filename='images/Mrs..jpg') }}" alt="Mrs.">
+                <img src="{{ url_for('static', filename='images/October.jpg') }}" alt="October">
+                <img src="{{ url_for('static', filename='images/Article.jpg') }}" alt="Article">
+                <img src="{{ url_for('static', filename='images/Do_Patti.jpg') }}" alt="Do Patti">
+            </div>
+            <button class="scroll-btn scroll-right" onclick="scrollGallery('DRAMA', 300)">&#10095;</button>
+        </div>
+    
+        <h1>Rom-Com</h1>
+        <div class="gallery-container">
+            <button class="scroll-btn scroll-left" onclick="scrollGallery('ROM-COM', -300)">&#10094;</button>
+            <div class="image-gallery" id="ROM-COM">
+                <img src="{{ url_for('static', filename='images/Cocktail.jpg') }}" alt="Cocktail">
+                <img src="{{ url_for('static', filename='images/Band_Baaja_Baaraat.jpg') }}" alt="Band Baaja Baaraat">
+                <img src="{{ url_for('static', filename='images/dostana.jpg') }}" alt="Dostana">
+                <img src="{{ url_for('static', filename='images/Mere_Brother_Ki_Dulhan22.jpg') }}" alt="Mere Brother Ki Dulhan">
+                <img src="{{ url_for('static', filename='images/Jab_We_Met.jpg') }}" alt="Jab We Met">
+                <img src="{{ url_for('static', filename='images/Family_Affair.jpg') }}" alt="Family Affair">
+                <img src="{{ url_for('static', filename='images/The_Perfect_Date.jpg') }}" alt="The Perfect Date">
+            </div>
+            <button class="scroll-btn scroll-right" onclick="scrollGallery('ROM-COM', 300)">&#10095;</button>
+        </div>
+    </main>
+    
+    <footer id="103">
+        <div class="footer-container">
+            <!-- About MovieFlix -->
+            <div class="footer-section">
+                <h5>About MovieFlix</h5>
+                <p>MovieFlix is your go-to destination for discovering, rating, and reviewing thousands of movies. Whether you're a casual viewer or a die-hard cinephile, we bring you in-depth reviews, personalized recommendations, and a vibrant community of movie lovers.</p>
+            </div>
+    
+            <!-- Contact Information -->
+            <div class="footer-section">
+                <h5>Contact Us</h5>
+                <p>Email: support@movieflix.com</p>
+                <p>Phone: +1 234 567 890</p>
+                <p>Address: 123 Movie Street, Hollywood, CA</p>
+            </div>
+    
+            <!-- Social Media -->
+            <div class="footer-section">
+                <h5>Follow Us</h5>
+                <div class="social-icons">
+                    <a href="#"><img src="{{ url_for('static', filename='images/facebook.jpg') }}" alt="Facebook"></a>
+                    <a href="#"><img src="{{ url_for('static', filename='images/instagram.jpg') }}" alt="Instagram"></a>
+                    <a href="#"><img src="{{ url_for('static', filename='images/youtube.jpg') }}" alt="Youtube"></a>
+                    <a href="#"><img src="{{ url_for('static', filename='images/Telegram.jpg') }}" alt="Telegram"></a>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 MovieFlix. All Rights Reserved.</p>
+        </div>
+    </footer>
+ 
+
+    <script>
+    function scrollGallery(id, scrollAmount) {
+        document.getElementById(id).scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+    </script>
+
+</body>
+</html>
